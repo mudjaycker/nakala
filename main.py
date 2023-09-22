@@ -19,4 +19,4 @@ webview.create_window(
     x=sx-310,
     y=sy-550
 )
-webview.start()
+webview.start(debug=True)
