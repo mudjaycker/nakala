@@ -1,7 +1,7 @@
 <script lang="ts">
   //@ts-nocheck
   import { onMount } from "svelte";
-  import List from "./components/List.svelte";
+  import List from "./components/ListReminder.svelte";
   import Navbar from "./components/NavBar.svelte";
   import { currentComponent } from "./store";
 

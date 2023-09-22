@@ -4,8 +4,7 @@
     text: "",
   };
   $: save = function () {
-    let string = JSON.stringify(reminder);
-    localStorage.setItem("reminder", string);
+    let stringVal = JSON.stringify(reminder);
   };
 </script>
 

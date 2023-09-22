@@ -11,12 +11,12 @@ sy = root.winfo_screenheight()
 
 webview.create_window(
     "nakala",
-    "http://localhost:5173/",
-    background_color="#FF0000",
+    "dist/index.html",
+    background_color="#4f384a",
     width=300,
     height=500,
     on_top=True,
     x=sx-310,
     y=sy-550
 )
-webview.start(debug=True)
+webview.start()

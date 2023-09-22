@@ -1,8 +1,8 @@
 <script lang="ts">
   //@ts-nocheck
   import { currentComponent } from "../store";
-  import List from "./List.svelte";
-  import ReminderField from "./ReminderField.svelte";
+  import List from "./ListReminder.svelte";
+  import Add from "./AddReminder.svelte";
 
   let count: number = 0;
   const increment = () => {
@@ -14,7 +14,7 @@
   <nav>
     <button
       on:click={() => {
-        $currentComponent = ReminderField;
+        $currentComponent = Add;
       }}
     >
       Add reminder
