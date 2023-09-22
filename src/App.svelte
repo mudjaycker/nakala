@@ -1,11 +1,16 @@
 <script lang="ts">
-  import { onMount } from "svelte";
   //@ts-nocheck
+  import { onMount } from "svelte";
+  import List from "./components/List.svelte";
   import Navbar from "./components/NavBar.svelte";
-  import ReminderField from "./components/ReminderField.svelte";
+  import { currentComponent } from "./store";
+
+  onMount(() => {
+    currentComponent.set(List);
+  });
 </script>
 
 <main>
   <Navbar />
-  <ReminderField />
+  <svelte:component this={$currentComponent} />
 </main>
