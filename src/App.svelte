@@ -1,9 +1,9 @@
 <script lang="ts">
-  import {onMount} from "svelte"
+  import { onMount } from "svelte";
   //@ts-nocheck
-  import Title from "./components/Title.svelte";
+  import Navbar from "./components/NavBar.svelte";
 </script>
 
 <main>
-  <Title></Title>
+  <Navbar />
 </main>
