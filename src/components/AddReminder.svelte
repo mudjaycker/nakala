@@ -1,10 +1,12 @@
 <script>
+  import { datas } from "../store";
+
   let reminder = {
     title: "",
     text: "",
   };
   $: save = function () {
-    let stringVal = JSON.stringify(reminder);
+    $datas.push(reminder);
   };
 </script>
 

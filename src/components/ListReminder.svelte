@@ -1,3 +1,18 @@
+<script>
+  //@ts-nocheck
+  import { datas } from "../store";
+</script>
+
 <section>
-    <p>list</p>
+  <ul>
+    {#each $datas as data}
+      <li>{data?.title}</li>
+    {/each}
+  </ul>
 </section>
+
+<style>
+  section {
+    color: white;
+  }
+</style>

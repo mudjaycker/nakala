@@ -13,8 +13,11 @@
 <section>
   <nav>
     <button
-      on:click={() => {
-        $currentComponent = Add;
+      on:click={async() => {
+        // $currentComponent = Add;
+        window.pywebview.api.hello({name: "moi"}).then(()=>{
+          console.log("ok")
+        })
       }}
     >
       Add reminder

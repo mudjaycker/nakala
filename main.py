@@ -1,6 +1,5 @@
 import webview
 from tkinter import Tk
-from utils import async_to_sync
 
 root = Tk()
 
@@ -10,9 +9,8 @@ sy = root.winfo_screenheight()
 
 
 class Api:
-    @async_to_sync
-    async def hello(self, name):
-        print("===> hello", name)
+    def hello(self, name):
+        print("===> hello", name["name"])
 
 
 # percent = lambda x, p: (p*x)/100
