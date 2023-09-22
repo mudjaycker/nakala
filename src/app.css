@@ -1,9 +1,10 @@
 :root{
-    --color1: #4f384a;
-    --color2: #3e313c;
+    --color1: #155749;
+    --color2: #16394c;
     --color3: #4f384adc;
+    --color4: #ffffffdc;
 }
 
 body{
-    background-color: var(--color1);
+    background-color: var(--color2);
 }
