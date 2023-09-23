@@ -29,15 +29,32 @@
 
 <style>
   section {
-    margin-top: 20%;
-    margin-left: 10%;
-    padding: 10%;
+    width: 100%;
+    height: 100%;
+    margin-top: 40px;
+    margin-left: 1%;
   }
   textarea {
-    width: 90%;
+    width: 96.2%;
     margin-top: 2%;
+    background-color: var(--color2);
+    margin-top: 40px;
+    font-size: large;
+    border: 2px double #a56f6f;
+  }
+
+  textarea:focus {
+    border: 1px solid #a56f6f;
+    background-color: #cee0979f;
   }
   input {
-    width: 90%;
+    width: 96.2%;
+    border-top: none;
+    border-width: none;
+    border-bottom: 2px double #a56f6f;
+    background-color: #cee0979f;
+  }
+  input:focus {
+    border: none;
   }
 </style>

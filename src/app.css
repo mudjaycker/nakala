@@ -1,25 +1,31 @@
 :root{
     --color1: #155749;
-    --color2: #16394c;
+    --color2: ##9abda7;
     --color3: #4f384a;
     --color4: #ffffffdc;
 }
 
 body{
-    background-color: var(--color2);
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #9abda7;
 }
 #ap{
     height: 100%;
 }
 button{
     all: unset;
-    background-color: rgb(255, 208, 0);
+    /* background-color: rgb(242, 255, 0); */
     color: var(--color3);
     padding: 1%;
     font-size: 0.8em;
     text-align: center;
     width: 35%;
     font-weight: bold;
+    border: 2px double black;
+    border-radius: 6px;
  }
   button:hover{
     background-color: var(--color3);

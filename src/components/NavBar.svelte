@@ -5,19 +5,13 @@
   import Add from "./AddReminder.svelte";
 
   let count: number = 0;
-  const increment = () => {
-    count += 1;
-  };
 </script>
 
 <section>
   <nav>
     <button
-      on:click={async() => {
-        // $currentComponent = Add;
-        window.pywebview.api.hello({name: "moi"}).then(()=>{
-          console.log("ok")
-        })
+      on:click={async () => {
+        $currentComponent = Add;
       }}
     >
       Add reminder
@@ -34,8 +28,9 @@
 
 <style>
   nav {
-    background: var(--color1);
+    background: none;
     display: flex;
     justify-content: space-between;
+    border: 5px double var(--color1);
   }
 </style>
