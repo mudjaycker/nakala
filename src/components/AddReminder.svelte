@@ -1,12 +1,21 @@
 <script>
-  import { datas } from "../store";
+  //@ts-nocheck
+  import { py } from "../var";
 
   let reminder = {
     title: "",
     text: "",
   };
   $: save = function () {
-    $datas.push(reminder);
+    py.create_reminder(reminder)
+      .then(() => {
+        alert("Success");
+        reminder.text = "";
+        reminder.title = "";
+      })
+      .catch((e) => {
+        alert(e);
+      });
   };
 </script>
 
