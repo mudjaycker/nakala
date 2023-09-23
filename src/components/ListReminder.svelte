@@ -5,7 +5,7 @@
   import { py } from "../var";
 
   onMount(async ()=>{
-    $datas = await py.get_reminders()
+    $datas = await py.get()
   })
 </script>
 

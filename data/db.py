@@ -1,6 +1,6 @@
 from tortoise import Tortoise, run_async
-from .utils import async_to_sync
-from .models import Reminder
+from utils import async_to_sync
+from models import Reminder
 
 
 async def init():
@@ -13,11 +13,11 @@ run_async(init())
 
 class API:
     @async_to_sync
-    async def create_reminder(self, reminder: dict):
+    async def create(self, reminder: dict):
         reminder = Reminder(**reminder)
         await reminder.save()
 
     @async_to_sync
-    async def get_reminders(self):
+    async def getAll(self):
         datas = [{"title": reminder.title, "text": reminder.text} async for reminder in Reminder.all()]
         return datas

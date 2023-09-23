@@ -7,7 +7,7 @@
     text: "",
   };
   $: save = function () {
-    py.create_reminder(reminder)
+    py.create(reminder)
       .then(() => {
         alert("Success");
         reminder.text = "";
