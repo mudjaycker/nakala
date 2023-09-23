@@ -1,5 +1,6 @@
 import webview
 from tkinter import Tk
+from data.db import API
 
 root = Tk()
 
@@ -7,16 +8,10 @@ sx = root.winfo_screenwidth()
 sy = root.winfo_screenheight()
 
 
-
-class Api:
-    def hello(self, name):
-        print("===> hello", name["name"])
-
-
 # percent = lambda x, p: (p*x)/100
 dev_url = "http://localhost:5173/"
 test_url = "dist/index.html"
-api = Api()
+api = API()
 webview.create_window(
     "nakala",
     dev_url,
