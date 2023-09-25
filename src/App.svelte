@@ -3,10 +3,12 @@
   import { onMount } from "svelte";
   import List from "./components/ListReminder.svelte";
   import Navbar from "./components/NavBar.svelte";
-  import { currentComponent } from "./store";
+  import { currentComponent, datas } from "./store";
+  import { py } from "./var";
 
-  onMount(() => {
+  onMount(async () => {
     currentComponent.set(List);
+    $datas = await py.get()
   });
 </script>
 

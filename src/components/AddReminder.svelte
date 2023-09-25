@@ -1,5 +1,6 @@
 <script>
   //@ts-nocheck
+  import { datas } from "../store";
   import { py } from "../var";
 
   let reminder = {
@@ -10,12 +11,11 @@
     py.create(reminder)
       .then(() => {
         alert("Success");
-        reminder.text = "";
-        reminder.title = "";
+        $datas.push(reminder);
       })
       .catch((e) => {
         alert(e);
-      });
+      })
   };
 </script>
 

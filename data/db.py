@@ -1,23 +1,14 @@
-from tortoise import Tortoise, run_async
-from utils import async_to_sync
-from models import Reminder
-
-
-async def init():
-    await Tortoise.init(db_url="sqlite://db.sqlite3", modules={"models": ["data.models"]})
-    await Tortoise.generate_schemas()
-
-
-run_async(init())
-
+from .init_db import *
+from .utils import async_to_sync
+from .models import Reminder
 
 class API:
     @async_to_sync
-    async def create(self, reminder: dict):
+    async def create(self, reminder):
         reminder = Reminder(**reminder)
         await reminder.save()
 
     @async_to_sync
-    async def getAll(self):
+    async def get(self):
         datas = [{"title": reminder.title, "text": reminder.text} async for reminder in Reminder.all()]
         return datas

@@ -1,18 +1,13 @@
 <script>
   //@ts-nocheck
   import { datas } from "../store";
-  import { onMount } from "svelte";
-  import { py } from "../var";
 
-  onMount(async ()=>{
-    $datas = await py.get()
-  })
 </script>
 
 <section>
   <ul>
     {#each $datas as data}
-      <li>{data?.title}</li>
+      <li>{data.title}</li>
     {/each}
   </ul>
 </section>
