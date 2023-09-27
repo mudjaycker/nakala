@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   //@ts-nocheck
   import { datas } from "../store";
   import { py } from "../var";
@@ -15,46 +15,48 @@
       })
       .catch((e) => {
         alert(e);
-      })
+      });
   };
 </script>
 
 <section>
-  <div>
-    <input type="text" placeholder="Title" bind:value={reminder.title} />
-    <textarea name="" id="" cols="28" rows="8" bind:value={reminder.text} />
-    <button type="button" on:click={save}>add</button>
+  <div class="form__group field">
+    <input
+      type="input"
+      class="form__field"
+      placeholder="Today's todo"
+      required
+      bind:value={reminder.title}
+    />
+    <label for="name" class="form__label">Title</label>
+  </div>
+
+  <div id="wrapper">
+    <form id="paper" method="get" action="">
+      <textarea
+        placeholder="Enter something funny."
+        id="text"
+        name="text"
+        bind:value={reminder.text}
+        style="overflow: hidden; word-wrap: break-word; resize: none; height: 160px; width: 30%"
+      />
+      <br />
+    </form>
+    <button class="jbutton" type="button" on:click={save}>Add</button>
   </div>
 </section>
 
-<style>
+<style lang="scss">
   section {
     width: 100%;
     height: 100%;
     margin-top: 40px;
     margin-left: 1%;
   }
-  textarea {
+  .form__group {
     width: 96.2%;
-    margin-top: 2%;
-    background-color: var(--color2);
-    margin-top: 40px;
-    font-size: large;
-    border: 2px double #a56f6f;
   }
-
-  textarea:focus {
-    border: 1px solid #a56f6f;
-    background-color: #cee0979f;
-  }
-  input {
-    width: 96.2%;
-    border-top: none;
-    border-width: none;
-    border-bottom: 2px double #a56f6f;
-    background-color: #cee0979f;
-  }
-  input:focus {
-    border: none;
+  input{
+    color: black;
   }
 </style>
