@@ -10,6 +10,7 @@
 <section>
   <nav>
     <button
+      class="mbutton"
       on:click={async () => {
         $currentComponent = Add;
       }}
@@ -17,6 +18,7 @@
       Add reminder
     </button>
     <button
+      class="mbutton"
       on:click={() => {
         $currentComponent = List;
       }}
@@ -32,5 +34,7 @@
     display: flex;
     justify-content: space-between;
     border: 5px double var(--color1);
+    padding: 10px;
+    flex-direction: row;
   }
 </style>

@@ -5,11 +5,11 @@
 </script>
 
 <section>
-  <ul>
+  <div>
     {#each $datas as data}
-      <li>{data.title}</li>
+      <div class="abutton">{data.title}</div>
     {/each}
-  </ul>
+  </div>
 </section>
 
 <style>
