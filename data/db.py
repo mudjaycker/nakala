@@ -15,7 +15,7 @@ class API:
             {
                 "title": reminder.title,
                 "text": reminder.text,
-                "importance": reminder.importances[reminder.importance],
+                "importance": reminder.importance,
                 "date": reminder.created_at,
             }
             async for reminder in Reminder.all()
