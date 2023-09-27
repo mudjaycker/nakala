@@ -16,11 +16,11 @@ webview.create_window(
     "nakala",
     dev_url,
     background_color="#4f384a",
-    width=300,
-    height=500,
+    width=325,
+    height=510,
     on_top=True,
     x=sx - 310,
     y=sy - 550,
     js_api=api,
 )
-webview.start(debug=True)
+webview.start(debug=False)
