@@ -6,8 +6,10 @@
   let reminder = {
     title: "",
     text: "",
+    importance: 0,
   };
   $: save = function () {
+    reminder.importance = Number(reminder.importance)
     py.create(reminder)
       .then(() => {
         alert("Success");
@@ -28,7 +30,14 @@
       required
       bind:value={reminder.title}
     />
-    <label for="name" class="form__label">Title</label>
+    <label for="name" class="form__label">Today's todo</label>
+  </div>
+  <div>
+    <select bind:value={reminder.importance}>
+      <option value="0">Low</option>
+      <option value="1">Normal</option>
+      <option value="2">High</option>
+    </select>
   </div>
 
   <div id="wrapper">
@@ -56,7 +65,7 @@
   .form__group {
     width: 96.2%;
   }
-  input{
+  input {
     color: black;
   }
 </style>
