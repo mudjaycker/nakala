@@ -10,11 +10,11 @@ sy = root.winfo_screenheight()
 
 # percent = lambda x, p: (p*x)/100
 dev_url = "http://localhost:5173/"
-test_url = "dist/index.html"
+production_url = "dist/index.html"
 api = API()
 webview.create_window(
     "nakala",
-    dev_url,
+    production_url,
     background_color="#4f384a",
     width=325,
     height=510,
@@ -23,4 +23,4 @@ webview.create_window(
     y=sy - 550,
     js_api=api,
 )
-webview.start(debug=False)
+webview.start(debug=False, gui="qt")

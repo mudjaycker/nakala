@@ -23,7 +23,6 @@ class API:
         return datas
 
 
-# api = API()
 # r = Reminder(title="test", text="test", importance=1)
 # print(r)
 # print(api.get())
