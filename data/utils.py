@@ -27,9 +27,6 @@ class IntChoice(fields.IntField):
     calledTime: int = 0
     choices: t.Iterable[int] = []
 
-    def __init__(self, primary_key: bool | None = None, **kwargs: dict[str, t.Any]):
-        super().__init__(primary_key, **kwargs)
-
     def validate(self, value: t.Any):
         if value not in self.choices and IntChoice.calledTime > 1:
             raise LookupError("Not in choices")

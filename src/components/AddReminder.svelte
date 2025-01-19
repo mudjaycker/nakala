@@ -1,18 +1,18 @@
 <script lang="ts">
-  //@ts-nocheck
   import { todos, py } from "../store";
+  import type { T_Todo } from "../types";
 
   let reminder = {
     title: "",
     text: "",
     importance: 0,
   };
-  $: save = function () {
-    reminder.importance = Number(reminder.importance)
-    $py.create(reminder)
+  const save = function (data: T_Todo) {
+    data.importance = Number(data.importance)
+    $py.create(data)
       .then(() => {
         alert("Success");
-        $todos.push(reminder);
+        $todos.push(data);
       })
       .catch((e) => {
         alert(e);
@@ -50,7 +50,7 @@
       />
       <br />
     </form>
-    <button class="jbutton" type="button" on:click={save}>Add</button>
+    <button class="jbutton" type="button" on:click={()=>save(reminder)}>Add</button>
   </div>
 </section>
 

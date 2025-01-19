@@ -7,5 +7,5 @@ export interface T_Todo {
 
 export interface T_Py {
   get: () => Promise<T_Todo[]>;
-  create: Promise<null>;
+  create: (data: T_Todo) => Promise<null>;
 }
