@@ -1,31 +1,27 @@
 from .init_db import *
-from .utils import async_to_sync
+from .utils import async_to_sync, T_Todo
 from .models import Reminder
 
 
 class API:
     def __init__(self):
         print("API initialized")
+
     @async_to_sync
-    async def create(self, reminder):
-        reminder = Reminder(**reminder)
+    async def create(self, data: T_Todo):
+        reminder = Reminder(**data)
         await reminder.save()
         return None
 
     @async_to_sync
     async def get(self):
-        datas = [
+        datas: list[T_Todo] = [
             {
-                "title": reminder.title,
-                "text": reminder.text,
-                "importance": reminder.importance,
-                # "date": reminder.created_at,
+                "title": todo.title,
+                "importance": todo.importance,
+                "text": todo.text,
+                "date": todo.created_at.isoformat(),
             }
-            async for reminder in Reminder.all()
+            async for todo in Reminder.all()
         ]
         return datas
-
-
-# r = Reminder(title="test", text="test", importance=1)
-# print(r)
-# print(api.get())
