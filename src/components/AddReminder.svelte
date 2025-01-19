@@ -1,7 +1,6 @@
 <script lang="ts">
   //@ts-nocheck
-  import { datas } from "../store";
-  import { py } from "../var";
+  import { todos, py } from "../store";
 
   let reminder = {
     title: "",
@@ -10,10 +9,10 @@
   };
   $: save = function () {
     reminder.importance = Number(reminder.importance)
-    py.create(reminder)
+    $py.create(reminder)
       .then(() => {
         alert("Success");
-        $datas.push(reminder);
+        $todos.push(reminder);
       })
       .catch((e) => {
         alert(e);
