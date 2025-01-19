@@ -4,10 +4,13 @@ from .models import Reminder
 
 
 class API:
+    def __init__(self):
+        print("API initialized")
     @async_to_sync
     async def create(self, reminder):
         reminder = Reminder(**reminder)
         await reminder.save()
+        return None
 
     @async_to_sync
     async def get(self):
