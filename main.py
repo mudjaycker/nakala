@@ -8,8 +8,8 @@ sx = root.winfo_screenwidth()
 sy = root.winfo_screenheight()
 
 
-url = "http://localhost:5173/"
-# url = "dist/index.html"
+# url = "http://localhost:5173/"
+url = "dist/index.html"
 api = API()
 webview.create_window(
     "nakala",

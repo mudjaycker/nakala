@@ -1,5 +1,4 @@
 import asyncio
-from typing import Callable
 from tortoise import fields
 import typing as t
 
@@ -10,10 +9,10 @@ U_ = t.TypeVar("U_")
 
 
 def async_to_sync(
-    func: Callable[P_, t.Coroutine[T_, t.Any, t.Any]]
+    func: t.Callable[P_, t.Coroutine[T_, t.Any, t.Any]]
 ) -> t.Callable[P_, T_]:
 
-    def inner(*args: P_.args, **kwargs: P_.kwargs):
+    def inner(*args: P_.args, **kwargs: P_.kwargs) -> T_:
 
         async def create_task(*args: P_.args, **kwargs: P_.kwargs):
             return await asyncio.create_task(func(*args, **kwargs))
